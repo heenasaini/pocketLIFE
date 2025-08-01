@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import AuthButton from './components/AuthButton'
 import Write from './components/Write';
 import Heatmap from './components/Heatmap';
+import ThemeToggle from './components/ThemeToggle';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 export const Context = React.createContext();
@@ -24,6 +25,7 @@ function App() {
       <Route path="/" element={<Navigate replace to={formattedDate}/>}/>
       <Route path='/:date' element={
       <>
+        <ThemeToggle />
       {/* <AuthButton/> */}
       <Context.Provider value={[changesMade, setChanges, today, setToday]}>
       <Write/>
