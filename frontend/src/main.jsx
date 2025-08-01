@@ -18,3 +18,16 @@ createRoot(document.getElementById('root')).render(
     </GoogleOAuthProvider>
   </StrictMode>,
 )
+
+const btn = document.getElementById('theme-toggle');
+btn.onclick = () => {
+  document.body.classList.toggle('dark-mode');
+  // optional: store in localStorage
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+};
+// To auto-apply on initial load:
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+}
+

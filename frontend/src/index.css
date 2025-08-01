@@ -80,3 +80,19 @@ textarea{
         z-index: 1;
     }
 }
+
+:root {
+  --bg: #fff;
+  --fg: #222;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  --bg: #181818;
+  --fg: #f5f5f5;
+}
